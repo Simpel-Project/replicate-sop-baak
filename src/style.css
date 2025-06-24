@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 100 900; 
+  font-display: swap;
+
+  src: url('/font/Exo_2/Exo2-Regular.woff2') format('woff2');
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Exo 2", "sans-serif";
+  --color-primary: #111114
+}
+
+
+
