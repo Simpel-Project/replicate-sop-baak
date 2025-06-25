@@ -1,8 +1,8 @@
 <template>
     <NavLayout/>
-    <Main>
+    <main>
         <SopLayout/>
-    </Main>
+    </main>
     <FooterLayout/>
     
 
