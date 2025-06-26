@@ -1,4 +1,8 @@
 <script setup lang="ts">
+// 1. Impor komponen sidebar yang baru
+import SideNav from '../components/SideNav.vue' // Sesuaikan path jika perlu
+
+// Data dan fungsi tetap berada di komponen induk, karena induk yang "memiliki" data ini.
 const sidebarItems = [
   'Informasi Pendaftaran Wisuda Online',
   'Panduan Penggunaan Absensi Kuliah Online',
@@ -9,7 +13,8 @@ const sidebarItems = [
 ]
 
 const handleItemClick = (item: string) => {
-  console.log('Sidebar item clicked:', item)
+  // Logika ini akan dijalankan ketika sidebar memancarkan event
+  console.log('Event "itemClick" diterima dari anak dengan data:', item)
 }
 </script>
 
@@ -21,44 +26,43 @@ const handleItemClick = (item: string) => {
         
         <div class="mb-16 text-center md:text-left">
           <h2 class="text-5xl md:text-4xl font-bold inline-block mr-4 lg:mr-20 align-middle">SOP BAAK</h2>
-          <p class="text-sm uppercase inline-block max-w-xs align-middle mt-4 md:mt-0">
+          <p class="text-xl uppercase inline-block max-w-sm align-middle mt-4 md:mt-0">
             Standar Operasional Prosedur (SOP) dan Peta Proses Bisnis Layanan BAAK
           </p>
         </div>
 
-        <div class="mt-10">
+        <div class="mt-25">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-            <a href="/sop/akademik" class="
-                  block rounded-full bg-gradient-to-b from-[#d4af37] to-[#b8860b] 
+            <a href="/sop" class="
+                  block rounded-full bg-gradient-to-b from-secondary to-[#b58302] 
                   p-8 text-center font-bold text-black 
-                  transition duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-900/20">
+                  transition duration-200 transform hover:scale-99 hover:shadow-lg hover:shadow-yellow-900/20">
               Standar Operasional Prosedural (SOP)<br>
               Layanan Akademik
             </a>
 
-            <a href="/sop/kemahasiswaan" class="
-                  block rounded-full bg-gradient-to-b from-[#d4af37] to-[#b8860b] 
+            <a href="/sop" class="
+                  block rounded-full bg-gradient-to-b from-secondary to-[#b8860b] 
                   p-8 text-center font-bold text-black 
-                  transition duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-900/20
+                  transition duration-200 transform hover:scale-99 hover:shadow-lg hover:shadow-yellow-900/20
                 ">
               Standar Operasional Prosedural (SOP)<br>
               Layanan Kemahasiswaan
             </a>
 
-            <a href="/sop/pdpt" class="
-                  block rounded-full bg-gradient-to-b from-[#d4af37] to-[#b8860b] 
+            <a href="/sop" class="
+                  block rounded-full bg-gradient-to-b from-secondary to-[#b8860b] 
                   p-8 text-center font-bold text-black 
-                  transition duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-900/20
+                  transition duration-200 transform hover:scale-99 hover:shadow-lg hover:shadow-yellow-900/20
                 ">
               Standar Operasional Prosedural (SOP)<br>
               Layanan PDPT
             </a>
-
-            <a href="/bisnis/baak" class="
-                  block rounded-full border-2 border-[#d4af37] bg-transparent 
-                  p-8 text-center font-bold text-[#d4af37] 
-                  transition duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-900/20
+            <a href="/sop" class="
+                  block rounded-full bg-gradient-to-b from-secondary to-[#b8860b] 
+                  p-8 text-center font-bold text-black 
+                  transition duration-200 transform hover:scale-99 hover:shadow-lg hover:shadow-yellow-900/20
                 ">
               PETA PROSES BISNIS<br>
               LAYANAN BAAK
@@ -67,15 +71,11 @@ const handleItemClick = (item: string) => {
         </div>
 
       </div>
-
-      <aside class="w-full lg:w-80 flex-shrink-0 space-y-4">
-        <div v-for="item in sidebarItems" :key="item" @click="handleItemClick(item)"
-          class="cursor-pointer p-4 rounded-sm border-2 border-[#d4af37] bg-transparent text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition-all duration-300 transform hover:scale-101">
-          <p class="text-sm font-medium leading-relaxed">
-            {{ item }}
-          </p>
-        </div>
-      </aside>
+    <!-- sidebar nav -->
+     <SideNav 
+        :items="sidebarItems" 
+        @item-click="handleItemClick" 
+      />
 
     </div>
   </section>

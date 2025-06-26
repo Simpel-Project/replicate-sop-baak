@@ -1,97 +1,94 @@
 <template>
   <nav class="bg-primary text-white shadow-md font-display">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+    <div class="max-w-7xl mx-auto mr-20 px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center h-20">
+        
         <div class="flex-shrink-0">
-          <img class="h-10 w-auto" src="../assets/PLAI-LOGO.png" alt="PLAI BMD">
+          <img class="h-10 ml-5 w-auto" src="../assets/PLAI-LOGO.png" alt="PLAI BMD">
         </div>
 
-        <div class="hidden md:block">
-          <ul class="ml-10 flex items-center space-x-8">
+        <div class="hidden md:block ml-auto">
+          <ul class="flex items-baseline space-x-6">
             
             <li class="relative">
-              <button @click="toggleDropdown('profil')" class="flex items-center hover:text-secondary transition-colors duration-200">
+              <button @click="toggleDropdown('profil')" class="flex items-center text-sm hover:text-secondary transition-colors duration-200">
                 <span>Profil</span>
-                <svg 
-                  class="w-3 h-3 ml-2 transform transition-transform duration-200" 
-                  :class="{'rotate-180': activeDropdown === 'profil'}"
-                  viewBox="0 0 10 5"
-                  fill="currentColor"
-                  aria-hidden="true">
-                  <polygon points="0,0 10,0 5,5"></polygon>
-                </svg>
+                <svg class="w-3 h-3 ml-1.5" :class="{'rotate-180': activeDropdown === 'profil'}" viewBox="0 0 10 5" fill="currentColor"><polygon points="0,0 10,0 5,5"></polygon></svg>
               </button>
-              <div v-if="activeDropdown === 'profil'" class="absolute z-10 mt-2 w-48 rounded-b-sm shadow-lg bg-zinc-800">
-                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary" role="menuitem">Sub Menu 2</a>
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary" role="menuitem">Sub Menu 1</a>
-                </div>
+              <div v-if="activeDropdown === 'profil'" class="absolute left-0 z-10 mt-2 w-56 rounded-md shadow-lg bg-zinc-900">
+                <div class="py-1"><a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">Visi & Misi</a></div>
+                <div class="py-1"><a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">Struktur Organisasi</a></div>
               </div>
             </li>
 
             <li class="relative">
-              <button @click="toggleDropdown('profil-2')" class="flex items-center hover:text-secondary transition-colors duration-200">
-                <span>Profil 2</span>
-                <svg 
-                  class="w-3 h-3 ml-2 transform transition-transform duration-200" 
-                  :class="{'rotate-180': activeDropdown === 'profil-2'}"
-                  viewBox="0 0 10 5"
-                  fill="currentColor"
-                  aria-hidden="true">
-                  <polygon points="0,0 10,0 5,5"></polygon>
-                </svg>
+              <button @click="toggleDropdown('karyawan')" class="flex items-center text-sm hover:text-secondary transition-colors duration-200">
+                <span>Karyawan</span>
+                <svg class="w-3 h-3 ml-1.5" :class="{'rotate-180': activeDropdown === 'karyawan'}" viewBox="0 0 10 5" fill="currentColor"><polygon points="0,0 10,0 5,5"></polygon></svg>
               </button>
-              <div v-if="activeDropdown === 'profil-2'" class="absolute z-10 mt-2 w-48 rounded-b-sm shadow-lg bg-zinc-800">
-                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary" role="menuitem">Sub Menu 2</a>
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary" role="menuitem">Sub Menu 1</a>
-                </div>
+              <div v-if="activeDropdown === 'karyawan'" class="absolute left-0 z-10 mt-2 w-56 rounded-md shadow-lg bg-zinc-900">
+                <div class="py-1"><a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">Data Karyawan</a></div>
+                <div class="py-1"><a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">Absensi</a></div>
               </div>
             </li>
             
             <li class="relative">
-               <button @click="toggleDropdown('profil-3')" class="flex items-center hover:text-secondary transition-colors duration-200">
-                <span>Profil 3</span>
-                <svg 
-                  class="w-3 h-3 ml-2 transform transition-transform duration-200" 
-                  :class="{'rotate-180': activeDropdown === 'profil-3'}"
-                  viewBox="0 0 10 5"
-                  fill="currentColor"
-                  aria-hidden="true">
-                  <polygon points="0,0 10,0 5,5"></polygon>
-                </svg>
+              <button @click="toggleDropdown('kalender')" class="flex items-center text-sm hover:text-secondary transition-colors duration-200">
+                <span>Kalender</span>
+                <svg class="w-3 h-3 ml-1.5" :class="{'rotate-180': activeDropdown === 'kalender'}" viewBox="0 0 10 5" fill="currentColor"><polygon points="0,0 10,0 5,5"></polygon></svg>
               </button>
-              <div v-if="activeDropdown === 'profil-3'" class="absolute z-10 mt-2 w-48 rounded-b-sm shadow-lg bg-zinc-800">
-                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary" role="menuitem">Sub Menu 2</a>
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary" role="menuitem">Sub Menu 1</a>
-                </div>
+              <div v-if="activeDropdown === 'kalender'" class="absolute left-0 z-10 mt-2 w-56 rounded-md shadow-lg bg-zinc-900">
+                <div class="py-1"><a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">Kalender Akademik</a></div>
               </div>
             </li>
 
             <li class="relative">
-              <button @click="toggleDropdown('profil-4')" class="flex items-center hover:text-secondary transition-colors duration-200">
-                <span>Profil 4</span>
-                <svg 
-                  class="w-3 h-3 ml-2 transform transition-transform duration-200" 
-                  :class="{'rotate-180': activeDropdown === 'profil-4'}"
-                  viewBox="0 0 10 5"
-                  fill="currentColor"
-                  aria-hidden="true">
-                  <polygon points="0,0 10,0 5,5"></polygon>
-                </svg>
+              <button @click="toggleDropdown('akademik')" class="flex items-center text-sm hover:text-secondary transition-colors duration-200">
+                <span>Akademik</span>
+                <svg class="w-3 h-3 ml-1.5" :class="{'rotate-180': activeDropdown === 'akademik'}" viewBox="0 0 10 5" fill="currentColor"><polygon points="0,0 10,0 5,5"></polygon></svg>
               </button>
-              <div v-if="activeDropdown === 'profil-4'" class="absolute z-10 mt-2 w-48 rounded-b-sm shadow-lg bg-zinc-800">
-                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary" role="menuitem">Sub Menu 2</a>
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary" role="menuitem">Sub Menu 1</a>
-                </div>
+              <div v-if="activeDropdown === 'akademik'" class="absolute left-0 z-10 mt-2 w-56 rounded-md shadow-lg bg-zinc-900">
+                 <div class="py-1"><a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">Jadwal Kuliah</a></div>
               </div>
             </li>
-            
+
             <li>
-              <a href="#" class="hover:text-secondary transition-colors duration-200">Data Statistik</a>
+              <a href="#" class="text-sm hover:text-secondary transition-colors duration-200">Data Statistik</a>
             </li>
+
+            <li class="relative">
+              <button @click="toggleDropdown('beasiswa')" class="flex items-center text-sm hover:text-secondary transition-colors duration-200">
+                <span>Beasiswa</span>
+                <svg class="w-3 h-3 ml-1.5" :class="{'rotate-180': activeDropdown === 'beasiswa'}" viewBox="0 0 10 5" fill="currentColor"><polygon points="0,0 10,0 5,5"></polygon></svg>
+              </button>
+              <div v-if="activeDropdown === 'beasiswa'" class="absolute left-0 z-10 mt-2 w-56 rounded-md shadow-lg bg-zinc-900">
+                 <div class="py-1"><a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">Info Beasiswa</a></div>
+              </div>
+            </li>
+
+            <li class="relative">
+              <button @click="toggleDropdown('organisasi')" class="flex items-center text-sm hover:text-secondary transition-colors duration-200">
+                <span>Organisasi</span>
+                <svg class="w-3 h-3 ml-1.5" :class="{'rotate-180': activeDropdown === 'organisasi'}" viewBox="0 0 10 5" fill="currentColor"><polygon points="0,0 10,0 5,5"></polygon></svg>
+              </button>
+              <div v-if="activeDropdown === 'organisasi'" class="absolute left-0 z-10 mt-2 w-56 rounded-md shadow-lg bg-zinc-900">
+                 <div class="py-1"><a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">BEM & HIMA</a></div>
+              </div>
+            </li>
+
+            <li class="relative">
+              <button @click="toggleDropdown('prosedur')" class="flex items-center text-sm hover:text-secondary transition-colors duration-200">
+                <span>Prosedur Surat</span>
+                <svg class="w-3 h-3 ml-1.5" :class="{'rotate-180': activeDropdown === 'prosedur'}" viewBox="0 0 10 5" fill="currentColor"><polygon points="0,0 10,0 5,5"></polygon></svg>
+              </button>
+              <div v-if="activeDropdown === 'prosedur'" class="absolute left-0 z-10 mt-2 w-56 rounded-md shadow-lg bg-zinc-900">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">Surat Keterangan Aktif</a>
+                  <a href="#" class="block px-4 py-2 text-sm hover:bg-zinc-950 hover:text-secondary">Surat Izin Penelitian</a>
+                </div>
+              </div>
+            </li>
+            
           </ul>
         </div>
       </div>
@@ -102,23 +99,13 @@
 <script setup>
 import { ref } from 'vue';
 
-// State untuk melacak dropdown mana yang sedang terbuka.
-// Kita hanya akan mengizinkan satu dropdown terbuka pada satu waktu untuk UX yang lebih bersih.
-// Nilainya akan berupa nama dropdown yang aktif (misal: 'profil', 'karyawan', dll.)
 const activeDropdown = ref('');
 
-// Fungsi untuk membuka/menutup dropdown.
-// Jika dropdown yang sama diklik lagi, ia akan tertutup.
-// Jika dropdown lain diklik, dropdown yang lama akan tertutup dan yang baru akan terbuka.
 function toggleDropdown(name) {
   if (activeDropdown.value === name) {
-    activeDropdown.value = ''; // Tutup jika sudah terbuka
+    activeDropdown.value = '';
   } else {
-    activeDropdown.value = name; // Buka yang baru
+    activeDropdown.value = name; 
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
