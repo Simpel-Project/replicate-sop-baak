@@ -1,8 +1,8 @@
 <template>
     <NavLayout/>
-    <Main>
+    <main>
         <SopLayout/>
-    </Main>
+    </main>
     <FooterLayout/>
     
 
@@ -11,7 +11,7 @@
 <script setup>
  import NavLayout from '../components/NavLayout.vue'
  import FooterLayout from '../components/FooterLayout.vue'
- import SopLayout from '../components/SopLayout.vue';
+ import SopLayout from '../components/SopLayout.vue'
 </script>
 
 <style lang="scss" scoped>
