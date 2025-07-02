@@ -1,10 +1,10 @@
 <template>
   <nav class="bg-primary text-white shadow-md font-display">
-    <div class="max-w-7xl mx-auto mr-20 px-4 sm:px-6 lg:px-8">
+    <div class=" max-w-6xl mx-auto px-4 sm:px-10 lg:px-15">
       <div class="flex items-center h-20">
         
         <div class="flex-shrink-0">
-          <img class="h-10 ml-5 w-auto" src="../assets/PLAI-LOGO.png" alt="PLAI BMD">
+          <img class="h-10 ml-2 w-auto lg:ml-2" src="../assets/PLAI-LOGO.png" alt="PLAI BMD">
         </div>
 
         <div class="hidden md:block ml-auto">
