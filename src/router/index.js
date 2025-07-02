@@ -1,7 +1,7 @@
 
 import { createWebHistory,createRouter } from "vue-router";
 import Home from "../pages/Home.vue";
-import Sop from "../pages/Sop.vue";
+import SopCategoryPage from "../pages/SopCategoryPage.vue";
 
 
 const routes = [
@@ -11,9 +11,10 @@ const routes = [
         component : Home
     },
     {
-        path:"/sop",
-        name:"Sop",
-        component : Sop
+        path:"/sop/:category",
+        name:"SopCategory",
+        component : SopCategoryPage,
+        props: true
     },
 
 ]
