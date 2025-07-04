@@ -9,6 +9,7 @@ import NavLayout from '../components/NavLayout.vue';
 import FooterLayout from '../components/FooterLayout.vue';
 import SideNav from '../components/SideNav.vue';
 import { sidebarLinks } from '../data/sidebarData.ts';
+import BreadcrumbNav from '../components/BreadCrumbNav.vue';
 
 const props = defineProps<{
     category: string;
@@ -30,20 +31,28 @@ const handleItemClick = (item: string) => {
 <template>
   <NavLayout/>
   <main class="bg-main text-white font-display min-h-screen">
-    <div class="max-w-6xl mx-auto px-4 sm:px-4 lg:px-6 py-14 flex flex-col lg:flex-row gap-10 lg:gap-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-13">
       
-      <div class="flex-1">
-        <h1 class="text-4xl font-bold mb-2">{{ pageData.title }}</h1>
-        <p class="text-zinc-400 mb-10">STANDAR OPERASIONAL PROSEDUR (SOP) BIDANG {{ props.category.toUpperCase().replace('-', ' ') }}</p>
-        
-        <SopList :sops="pageData.items" />
-      </div>
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-16">
 
-      <SideNav 
-        :items="sidebarLinks" 
-        @item-click="handleItemClick" 
-      />
-      
+        <div class="flex-1">
+          
+          <BreadcrumbNav :currentPage="pageData.title" class="mb-8" />
+
+          <div>
+            <h1 class="text-4xl font-bold mb-2">{{ pageData.title }}</h1>
+            <p class="text-zinc-400 mb-10">STANDAR OPERASIONAL PROSEDUR (SOP) BIDANG {{ props.category.toUpperCase().replace('-', ' ') }}</p>
+            <SopList :sops="pageData.items" />
+          </div>
+
+        </div>
+
+        <SideNav 
+          :items="sidebarLinks" 
+          @item-click="handleItemClick" 
+        />
+        
+      </div>
     </div>
   </main>
   <FooterLayout/>
