@@ -24,7 +24,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="space-y-4">
+  <div class="space-y-4 max-h-[40rem] overflow-y-auto pr-2">
     <SopItem v-for="sop in sops" :key="sop.id" :sop="sop" />
   </div>
 </template>
