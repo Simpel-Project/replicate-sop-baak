@@ -20,7 +20,7 @@ const emit = defineEmits(['itemClick']);
         target="_blank" 
         rel="noopener noreferrer"
         @click="emit('itemClick', item)"
-        class="block cursor-pointer p-4 rounded-sm border-2 border-secondary bg-transparent text-white hover:bg-secondary hover:text-black transition-all duration-300 transform hover:scale-101">
+        class="block cursor-pointer p-4 rounded-lg border-2 border-secondary bg-transparent text-white hover:bg-secondary hover:text-black transition-all duration-300 transform hover:scale-101">
         <p class="text-sm font-medium leading-relaxed">{{ item.title }}</p>
       </a>
 
@@ -28,7 +28,7 @@ const emit = defineEmits(['itemClick']);
         v-else
         :to="item.url"
         @click="emit('itemClick', item)"
-        class="block cursor-pointer p-4 rounded-sm border-2 border-secondary bg-transparent text-white hover:bg-secondary hover:text-black transition-all duration-300 transform hover:scale-101">
+        class="block cursor-pointer p-4 rounded-lg border-2 border-secondary bg-transparent text-white hover:bg-secondary hover:text-black transition-all duration-300 transform hover:scale-101">
         <p class="text-sm font-medium leading-relaxed">{{ item.title }}</p>
       </router-link>
 
