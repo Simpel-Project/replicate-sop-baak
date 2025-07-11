@@ -31,10 +31,10 @@ const toggleExpand = () => {
 </script>
 
 <template>
-  <div class="border border-zinc-700 rounded-lg overflow-hidden transition-all duration-300" :class="{'bg-zinc-800': isExpanded}">
+  <div class="border border-zinc-600 rounded-lg overflow-hidden transition-all duration-300" :class="{'bg-zinc-800': isExpanded}">
     
     <div 
-      class="flex justify-between items-center p-4 cursor-pointer hover:bg-zinc-800/50" 
+      class="flex justify-between items-center p-4 cursor-pointer hover:bg-zinc-700/50" 
       @click="toggleExpand"
     >
       <div class="flex items-center gap-4">
@@ -47,7 +47,7 @@ const toggleExpand = () => {
       </div>
     </div>
 
-    <div v-if="isExpanded" class="bg-[#09090b] p-4 border-t border-zinc-700">
+    <div v-if="isExpanded" class="bg-main p-4 border-t border-zinc-700">
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         
         <div class="flex items-center flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400">
@@ -62,7 +62,7 @@ const toggleExpand = () => {
         </div>
 
         <div class="flex items-center gap-3">
-          <a :href="sop.previewUrl" target="_blank" class="px-4 py-2 text-sm bg-zinc-700 hover:bg-zinc-600 rounded-md transition-colors">Preview</a>
+          <a :href="sop.previewUrl" target="_blank" class="px-4 py-2 text-sm bg-zinc-600 hover:bg-zinc-500 rounded-md transition-colors">Preview</a>
           <a :href="sop.downloadUrl" class="px-4 py-2 text-sm bg-secondary text-black font-bold hover:bg-opacity-90 rounded-md transition-colors">Download</a>
         </div>
         
